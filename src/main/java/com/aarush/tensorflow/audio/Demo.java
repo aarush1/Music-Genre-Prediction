@@ -10,10 +10,16 @@ import com.aarush.tensorflow.classifiers.models.cifar10.Cifar10AudioClassifier;
 
 public class Demo {
 	public static void main(String[] args) {
+		System.out.println("***************************************");
+		System.out.println("\n\nMusic Genre Recognition System");
+		System.out.println("***************************************");
+
 		System.out.println("\n\nCreating a classifier..");
+		System.out.println();
 
 		Cifar10AudioClassifier classifier = new Cifar10AudioClassifier();
-		
+		System.out.println("\n\nCreated a classifier..");
+
 		try {
 			System.out.println("Loading the machine learning model..");
 			classifier.load_model();	
@@ -33,7 +39,9 @@ public class Demo {
 		for (String path : paths) {
 			System.out.println("\n\nPredicting the genre of song at location: " + path + " ...");
 			File f = new File(path);
+			System.out.println("------------------------------------------");
 			String label = classifier.predict_audio(f);
+			System.out.println("------------------------------------------");
 			System.out.println();
 			System.out.println("*********************************");
 			System.out.println("Predicted Genre: " + label);
