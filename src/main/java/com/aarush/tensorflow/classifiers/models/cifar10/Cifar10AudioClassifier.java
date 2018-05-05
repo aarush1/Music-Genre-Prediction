@@ -58,6 +58,7 @@ public class Cifar10AudioClassifier implements TrainedModelLoader, AudioClassifi
                 MelSpectrogramDimension.Height);
     }
 
+    // graph model used
     @Override
     public float[] encode_image(BufferedImage image, int imgWidth, int imgHeight) {
 
@@ -122,6 +123,7 @@ public class Cifar10AudioClassifier implements TrainedModelLoader, AudioClassifi
         BufferedImage image = MelSpectrogram.convert_to_image(f);
 
         // if image generated is a valid image, then predict Genre
+        // since prediction algorithm is buffered image based
         if(image != null) {
             return predict_image(image);
         }

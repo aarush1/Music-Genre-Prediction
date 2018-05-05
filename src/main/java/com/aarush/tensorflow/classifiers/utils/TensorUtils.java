@@ -32,6 +32,8 @@ public class TensorUtils {
             }
         }
 
+        // now you have the FloatBuffer that says how much is the red value of a pixel in the image. 
+        // Remember this image was created from the mp3 file
         return Tensor.create(new long[]{1, imgHeight, imgWidth, channels}, fb);
     }
 }
